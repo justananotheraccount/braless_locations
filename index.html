@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <meta name="robots" content="noindex">
+  <title>Mapa videí</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="map" aria-label="Mapa"></div>
+
+  <aside id="panel" class="panel" aria-hidden="true">
+    <div class="panel-grip" aria-hidden="true"></div>
+    <header class="panel-head">
+      <div class="panel-nav">
+        <button id="prev" class="icon-btn" type="button" aria-label="Předchozí">&#8249;</button>
+        <span id="counter" class="counter"></span>
+        <button id="next" class="icon-btn" type="button" aria-label="Další">&#8250;</button>
+      </div>
+      <button id="close" class="icon-btn" type="button" aria-label="Zavřít">&times;</button>
+    </header>
+    <div class="video-wrap">
+      <iframe id="video" title="Video" allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer"></iframe>
+    </div>
+    <footer class="panel-foot">
+      <a id="reddit" class="btn btn-reddit" target="_blank" rel="noopener noreferrer">Otevřít na Redditu</a>
+      <a id="redgifs" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">RedGIFs</a>
+    </footer>
+  </aside>
+
+  <div id="age-gate" class="age-gate" hidden>
+    <div class="age-box">
+      <h1>Obsah pro dospělé</h1>
+      <p>Tato stránka obsahuje videa určená pouze osobám starším 18 let.</p>
+      <div class="age-actions">
+        <button id="age-yes" class="btn btn-reddit" type="button">Je mi 18 let, vstoupit</button>
+        <a class="btn btn-ghost" href="https://www.google.com">Odejít</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
